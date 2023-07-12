@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>|Image Gallery|</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" defer></script>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+<body>
+  <header>
+      <a href=""><h1>|Image Gallery|</h1></a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div id="heading"><h1>Make your own Image Gallery</h1></div>
+      <p>A collection of amazing images uploaded by you</p><br>
+      <button id="uploadBtn" class="btn uploadBtn">Upload</button>
+    </div>
+  </section>
+
+  <div id="uploadMenu" class="hidden">
+    <div id="uploadContainer">
+      <h2>Upload Image</h2>
+      <button id="closeBtn">&#x2716;</button>
+      <div id="dropArea">
+        <p>Drag and drop an image here</p>
+        <p>or</p>
+        <input type="file" id="fileInput" accept="image/*">
+        <label for="fileInput" id="browseBtn">Browse</label>
+      </div>
+      <button id="uploadButton">Upload</button>
+    </div>
+  </div>
+
+  <div id="imageGallery"></div>
+
+  <div id="errorPopup" class="hidden"><b>⚠</b> Please select an image.</div>
+
+  <script>
+    window.onload = function() {
+      document.getElementById('uploadBtn').addEventListener('click', function() {
+        document.getElementById('uploadMenu').classList.remove('hidden');
+      });
+
+document.getElementById('closeBtn').addEventListener('click', function() {
+        document.getElementById('uploadMenu').classList.add('hidden');
+      });
+    };
+  </script>
+</body>
+</html>
